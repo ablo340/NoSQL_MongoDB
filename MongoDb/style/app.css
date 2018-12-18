@@ -1,0 +1,323 @@
+body{ 
+    background-color: #e9eef1;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}
+
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+.blog-grids {
+    overflow: hidden;
+    margin: 0 -15px;
+}
+
+.blog-grids .grid {
+    background-color: #fff;
+    width: calc(33.33% - 30px);
+    float: left;
+    padding: 15px;
+    margin: 20px 15px 15px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.entry-media img {
+    border-radius: 10px;
+    width: 100%;
+    max-height: 188px;
+}
+
+.entry-body {
+    padding: 27px 10px;
+}
+
+.entry-body .cat {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6220d9;
+    text-transform: uppercase;
+}
+
+.entry-body h3 {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.30em;
+    margin: 3px 0 0.73em;
+}
+
+.entry-body h3 a {
+    color: #41516a;
+}
+
+.entry-body h3 a:hover {
+    color: #6220d9;
+    text-decoration: none;
+}
+
+.entry-body p {
+    margin-bottom: 2em;
+    color: #90949a;
+    line-height: 1.8em;
+}
+
+.read-more-date {
+    position: relative;
+}
+
+.read-more-date a {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-size: 1.06667rem;
+    font-weight: 600;
+    color: #41516a;
+    text-transform: uppercase;
+}
+
+.read-more-date .date {
+    position: absolute;
+    right: 0;
+    color: #90949a;
+}
+
+
+/* card details start  */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:400,400i,700,700i');
+section{
+    padding: 100px 0;
+}
+.details-card {
+	background: #ecf0f1;
+}
+
+.card-content {
+	background: #ffffff;
+	border: 4px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.card-img {
+	position: relative;
+	overflow: hidden;
+	border-radius: 0;
+	z-index: 1;
+}
+
+.card-img img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.card-img span {
+	position: absolute;
+    top: 15%;
+    left: 12%;
+    background: #1ABC9C;
+    padding: 6px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transform: translate(-50%,-50%);
+}
+.card-img span h4{
+        font-size: 12px;
+        margin:0;
+        padding:10px 5px;
+         line-height: 0;
+}
+.card-desc {
+	padding: 1.25rem;
+}
+
+.card-desc h3 {
+	color: #000000;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.card-desc p {
+	color: #747373;
+    font-size: 14px;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 0px;
+	margin-bottom: 20px;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+.btn-card{
+	background-color: #1ABC9C;
+	color: #fff;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    padding: .84rem 2.14rem;
+    font-size: .81rem;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    margin: 0;
+    border: 0;
+    -webkit-border-radius: .125rem;
+    border-radius: .125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    color: #fff;
+}
+.btn-card:hover {
+    background: orange;
+}
+a.btn-card {
+    text-decoration: none;
+    color: #fff;
+}
+/* End card section */
+
+
+/** Margin and padding **/
+.pt0 {
+    padding-top: 0 !important; }
+
+.pt10 {
+    padding-top: 10px !important; }
+
+.pt20 {
+    padding-top: 20px !important; }
+
+.pt30 {
+    padding-top: 30px !important; }
+
+.pt40 {
+    padding-top: 40px !important; }
+
+.pt50 {
+    padding-top: 50px !important; }
+
+.pt60 {
+    padding-top: 60px !important; }
+
+.pt70 {
+    padding-top: 70px !important; }
+
+.pt80 {
+    padding-top: 80px !important; }
+
+.pt90 {
+    padding-top: 90px !important; }
+
+.pt100 {
+    padding-top: 100px !important; }
+
+.pb0 {
+    padding-bottom: 0 !important; }
+
+.pb10 {
+    padding-bottom: 10px !important; }
+
+.pb15 {
+    padding-bottom: 15px !important; }
+
+.pb20 {
+    padding-bottom: 20px !important; }
+
+.pb30 {
+    padding-bottom: 30px !important; }
+
+.pb40 {
+    padding-bottom: 40px !important; }
+
+.pb50 {
+    padding-bottom: 50px !important; }
+
+.pb60 {
+    padding-bottom: 60px !important; }
+
+.pb70 {
+    padding-bottom: 70px !important; }
+
+.pb80 {
+    padding-bottom: 80px !important; }
+
+.pb90 {
+    padding-bottom: 90px !important; }
+
+.pb100 {
+    padding-bottom: 100px !important; }
+
+.mb0 {
+    margin-bottom: 0 !important; }
+
+.mb5 {
+    margin-bottom: 5px !important; }
+
+.mb10 {
+    margin-bottom: 10px !important; }
+
+.mb20 {
+    margin-bottom: 20px !important; }
+
+.mb30 {
+    margin-bottom: 30px !important; }
+
+.mb40 {
+    margin-bottom: 40px !important; }
+
+.mb50 {
+    margin-bottom: 50px !important; }
+
+.mb60 {
+    margin-bottom: 60px !important; }
+
+.mb70 {
+    margin-bottom: 70px !important; }
+
+.mb80 {
+    margin-bottom: 80px !important; }
+
+.mb90 {
+    margin-bottom: 90px !important; }
+
+.mb100 {
+    margin-bottom: 100px !important; }
+
+.mt5 {
+    margin-top: 5px !important; }
+
+.mt30 {
+    margin-top: 30px !important; }
+
+.mt60 {
+    margin-top: 60px !important; }

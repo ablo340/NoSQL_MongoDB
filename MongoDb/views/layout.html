@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MongoBD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('app.css') }}" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">Home</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <a href="/function1" class="nav item active nav-link">Requête 1</a>
+            <a href="/function2" class="nav-item active nav-link">Requête 2</a>
+        </ul>
+
+        <form action="/function3" method="POST" class="form-inline my-2 mylg-0">
+            <select class="form-control mr-sm-2" id="genre" name="genre">
+                <option selected>...Genre...</option>
+                <option value="Aventure" >Aventure</option>
+                <option value= "Course">Course</option>
+                <option value= "Combat">Combat</option>
+                <option value= "Guerre">Guerre</option>
+                <option value= "Sport">Sport</option>
+            </select>
+            <select class="form-control mr-sm-2" id="console" name="console" >
+                <option selected>...Console...</option>
+                <option value="XboxOne" >XboxOne</option>
+                <option value= "Xbox360">Xbox360</option>
+                <option value= "Ps3">Ps3</option>
+                <option value= "Ps4">Ps4</option>
+                <option value= "Nitendo">Nitendo</option>
+            </select>
+            <select class="form-control mr-sm-2" id="note" name="note" >
+                    <option selected>...Note...</option>
+                    <option value="1" >1</option>
+                    <option value= "2">2</option>
+                    <option value= "3">3</option>
+                    <option value= "4">4</option>
+                    <option value= "5">5</option>
+                </select>
+            <button class="btn btn-outline-success" type="submit">Rechercher</button>
+        </form>
+    </div>
+</nav>
+    <div class="container">
+        <section>
+            <h3>Insérer un document</h3>
+            <form action="/insert" method="POST">
+                <div class="input">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+                <div class="input">
+                    <label for="genre">Genre : </label>
+                    <select class="mr-sm-2" id="genre" name="genre"s>
+                        <option selected>... Genre...</option>
+                        <option value="Aventure" >Aventure</option>
+                        <option value= "Course">Course</option>
+                        <option value= "Combat">Combat</option>
+                        <option value= "Guerre">Guerre</option>
+                        <option value= "Sport">Sport</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label>Console : </label>
+                    <label for="Ps4"><input type="checkbox" id="Ps4" name="consoles[]" value="Ps4">Ps4 </label>
+                    <label for="XboxOne"><input type="checkbox" id="XboxOne" name="consoles[]" value="XboxOne">xboxOne</label>
+                    <label for="XboxOne"><input type="checkbox" id="XboxOne" name="consoles[]" value="XboxOne">xbox360</label>
+                    <label for="XboxOne"><input type="checkbox" id="XboxOne" name="consoles[]" value="XboxOne">Nitendo</label>
+                    <label for="XboxOne"><input type="checkbox" id="XboxOne" name="consoles[]" value="XboxOne">Ps3</label>
+                    <label for="XboxOne"><input type="checkbox" id="XboxOne" name="consoles[]" value="XboxOne">Ps2</label>
+                </div>
+                <div class="input">
+                    <label for="note">Note :</label>
+                    <select class="mr-sm-2" id="note" name="note" >
+                        <option selected>... Note...</option>
+                        <option id="1" value="1" >1</option>
+                        <option id="2" value= "2">3</option>
+                        <option id="3" value= "3">3</option>
+                        <option id="4" value= "4">4</option>
+                        <option id="5" value= "5">5</option>
+                    </select><label>/5</label>
+                </div>
+                <div class="input">
+                    <label for="comment">Commentaire : </label>
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+                <div class="input">
+                    <label for="date">Date de sortie : </label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <button type="submit">Inserer</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

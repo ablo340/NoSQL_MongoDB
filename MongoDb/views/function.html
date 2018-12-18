@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MongoBD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('app.css') }}" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<!------ Include the above in your HEAD tag ---------->
+
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">Home</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <a href="/function1" class="nav item active nav-link">Requête 1</a>
+            <a href="/function2" class="nav-item active nav-link">Requête 2</a>
+        </ul>
+
+        <form action="/function3" method="POST" class="form-inline my-2 mylg-0">
+            <select class="form-control mr-sm-2" id="genre" name="genre">
+                <option selected>...Genre...</option>
+                <option value="Aventure" >Aventure</option>
+                <option value= "Course">Course</option>
+                <option value= "Combat">Combat</option>
+                <option value= "Guerre">Guerre</option>
+                <option value= "Sport">Sport</option>
+            </select>
+            <select class="form-control mr-sm-2" id="console" name="console" >
+                <option selected>...Console...</option>
+                <option value="XboxOne" >XboxOne</option>
+                <option value= "Xbox360">Xbox360</option>
+                <option value= "Ps3">Ps3</option>
+                <option value= "Ps4">Ps4</option>
+                <option value= "Nitendo">Nitendo</option>
+            </select>
+            <select class="form-control mr-sm-2" id="note" name="note" >
+                    <option selected>...Note...</option>
+                    <option value="1" >1</option>
+                    <option value= "2">2</option>
+                    <option value= "3">3</option>
+                    <option value= "4">4</option>
+                    <option value= "5">5</option>
+                </select>
+            <button class="btn btn-outline-success" type="submit">Rechercher</button>
+        </form>
+    </div>
+</nav>
+
+<!-- details card section starts from here -->
+<section class="details-card">
+    <div class="container pt60 pb60">
+        <div class="text-center mb60">
+            <h2>Liste des jeux</h2>
+        </div>
+        <div class="row">
+            {{#game }}
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="https://placeimg.com/380/230/nature" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <h3>{{ nom }}</h3>
+                        <h4>Genre: {{ genre }}</h4>
+                        <a href="#" class="btn-card">Voir plus</a>   
+                    </div>
+                </div>
+            </div>
+            {{/game}}
+        </div>
+    </div>
+</section>
+<!-- details card section starts from here -->
+
+</body>
+</html>
