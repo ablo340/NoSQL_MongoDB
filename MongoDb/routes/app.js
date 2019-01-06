@@ -26,6 +26,7 @@ var Schema = mongoose.Schema;
 var gameSchema = new Schema ({
     nom : String,
     genre : String,
+    image : String,
     consoles : [String],
     note: String,
     commentaire : String,
@@ -47,6 +48,7 @@ app.post('/insert', function(req, res) {
     var item = {
       nom: req.body.nom,
       genre: req.body.genre,
+      image: req.body.image,
       consoles: req.body.consoles,
       note: req.body.note,
       commentaire: req.body.comment,
@@ -64,13 +66,14 @@ app.post('/insert', function(req, res) {
 app.post('/function3', (req, res) => {
     var note = req.body.note;
     var genre = req.body.genre;
-    var console = req.body.console;
+    var conso = req.body.console;
 
-    Game.find({"note": note,
-                "genre": genre,
-                "consoles" : {$exists: true, $in: [ console ] }}).then(game => {
+    Game.find({ note: note,
+                genre: genre,
+                consoles : {$exists: true, $in: [ conso ] }}).then(game => {
           res.render('function', {game: game});
         });
+        
 });
 
 // get data (function 1)
@@ -90,8 +93,13 @@ app.get('/function1', (req, res) => {
         });
 });
 
-app.get('/page', function (req , res ) {
-    res.status(404).render('Page_not_found', {page : 'Page not found', layout: res.render('layout') });
+app.get('/page', function (req , res ) { 
+    res.status(404).render('Page_not_found', {page : 'Page not found'});
 });
+
+app.get('*', function(req, res){ // page not found
+    res.status(404).render('Page_not_found', {page : 'Page not found'});
+});
+
 
 module.exports = app;
