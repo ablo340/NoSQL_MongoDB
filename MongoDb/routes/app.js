@@ -30,7 +30,8 @@ var gameSchema = new Schema ({
     consoles : [String],
     note: String,
     commentaire : String,
-    dateDeSortie : Date
+    dateDeSortie : Date,
+    lengthConsoles : String //console's length
 })
 var Game = mongoose.model('Game', gameSchema);
 
@@ -44,15 +45,17 @@ app.get('/',
 //insert document
 app.post('/insert', function(req, res) {
 
+    var consoles = req.body.consoles;
     //document
     var item = {
       nom: req.body.nom,
       genre: req.body.genre,
       image: req.body.image,
-      consoles: req.body.consoles,
+      consoles: consoles,
       note: req.body.note,
       commentaire: req.body.comment,
-      dateDeSortie: req.body.date
+      dateDeSortie: req.body.date,
+      lengthConsoles: consoles.length //console's length
     };
 
     Game.create([item]); //inserting document
@@ -76,17 +79,14 @@ app.post('/function3', (req, res) => {
         
 });
 
-// get data (function 1)
+// get data (function 2)
 app.get('/function2', (req, res) => {
-    Game.find({$or: [ { consoles: { $size: 3 } },
-                    { consoles: { $size: 4 } },
-                    { consoles: { $size: 5 } },
-                 ]}).then(game => {
+    Game.find({ lengthConsoles: {$gt: 2} }).then(game => {
           res.render('function', {game: game});
         });
 });
 
-// get data (function)
+// get data (function 1)
 app.get('/function1', (req, res) => {
     Game.find({}).then(game => {
           res.render('function', {game: game});
