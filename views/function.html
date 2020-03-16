@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MongoBD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://24o4jw8cb0e2pym4i236aag1-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/video-games.jpeg">
+    <link rel="stylesheet" href="{{ asset('app.css') }}" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+<!------ Include the above in your HEAD tag ---------->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="https://24o4jw8cb0e2pym4i236aag1-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/video-games.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/function1">Requête 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/function2">Requête 2</a>
+        </li>
+        </ul>
+        <form action="/function3" method="POST" class="form-inline my-2 my-lg-0">
+            <select class="form-control mr-sm-2" id="genre" name="genre">
+                <option selected>...Genre...</option>
+                <option value="Aventure" >Aventure</option>
+                <option value= "Course">Course</option>
+                <option value= "Combat">Combat</option>
+                <option value= "Guerre">Guerre</option>
+                <option value= "Sport">Sport</option>
+            </select>
+            <select class="form-control mr-sm-2" id="console" name="console" >
+                <option selected>...Console...</option>
+                <option value="XboxOne" >XboxOne</option>
+                <option value= "Xbox360">Xbox360</option>
+                <option value= "Ps3">Ps3</option>
+                <option value= "Ps4">Ps4</option>
+                <option value= "Nitendo">Nitendo</option>
+                <option value= "Ps2">Ps2</option>
+            </select>
+            <select class="form-control mr-sm-2" id="note" name="note" >
+                <option selected>...Note...</option>
+                <option value="1" >1</option>
+                <option value= "2">2</option>
+                <option value= "3">3</option>
+                <option value= "4">4</option>
+                <option value= "5">5</option>
+            </select>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<!--<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">Home</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <a href="/function1" class="nav item active nav-link">Requête 1</a>
+            <a href="/function2" class="nav-item active nav-link">Requête 2</a>
+        </ul>
+
+        <form action="/function3" method="POST" class="form-inline my-2 mylg-0">
+            <select class="form-control mr-sm-2" id="genre" name="genre">
+                <option selected>...Genre...</option>
+                <option value="Aventure" >Aventure</option>
+                <option value= "Course">Course</option>
+                <option value= "Combat">Combat</option>
+                <option value= "Guerre">Guerre</option>
+                <option value= "Sport">Sport</option>
+            </select>
+            <select class="form-control mr-sm-2" id="console" name="console" >
+                <option selected>...Console...</option>
+                <option value="XboxOne" >XboxOne</option>
+                <option value= "Xbox360">Xbox360</option>
+                <option value= "Ps3">Ps3</option>
+                <option value= "Ps4">Ps4</option>
+                <option value= "Nitendo">Nitendo</option>
+            </select>
+            <select class="form-control mr-sm-2" id="note" name="note" >
+                    <option selected>...Note...</option>
+                    <option value="1" >1</option>
+                    <option value= "2">2</option>
+                    <option value= "3">3</option>
+                    <option value= "4">4</option>
+                    <option value= "5">5</option>
+                </select>
+            <button class="btn btn-outline-success" type="submit">Rechercher</button>
+        </form>
+    </div>
+</nav>-->
+
+<!-- details card section starts from here -->
+<div class="container pt60 pb60">
+    <div class="text-center mb60">
+        <h2>Liste des jeux</h2>
+    </div>
+    
+    <div class="card-deck">
+        {{#game }}
+        <div class="card">
+            <img src="{{ image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ nom }}</h5>
+            <h6 class="card-title">genre: {{ genre }}</h6>
+            <h6 class="card-title">note: {{ note }}/5</h6>
+            <h6 class="card-title">date de sortie: {{ dateDeSortie }}</h6>
+            <p class="card-text">{{ commentaire }}</p>
+            </div>
+            <div class="card-footer">
+            <h6 class="text-muted">Liste des consoles: {{ consoles }}</h6>
+            </div>
+        </div>
+        {{/game}}
+    </div>
+</div>
+<!-- details card section starts from here -->
+
+</body>
+</html>
